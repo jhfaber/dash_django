@@ -7,7 +7,7 @@
 
 # ADMIN COMMANDS
 
-For startapp commando you should register you app in settings.py file, in the array INSTALLED_APPS, later add project/urls.py to app/urls.py
+For startapp commando you should register you app in settings.py file, in the array INSTALLED_APPS, later add [project]/urls.py to [app]/urls.py
 
     python3 manage.py runserver
     python3 manage.py shell
@@ -46,11 +46,9 @@ For startapp commando you should register you app in settings.py file, in the ar
 # COMMOND TASK / TIPS
 
 - Imports are related to manage.py
-- Add models to dash: In admin.py: [link admin confg](https://docs.djangoproject.com/en/4.0/intro/tutorial07/) 
-
-> from .models import Question, Choice   
-> admin.site.register(Question)
-
+- Add models to dash: 
+  - [Documentation](https://docs.djangoproject.com/en/4.0/intro/tutorial07/) 
+  - In admin.py [project](first_app/admin.py)
 - [Django databases](https://docs.djangoproject.com/en/4.0/ref/databases/)
 - [Django REST FRAMEWORK](https://www.django-rest-framework.org/)
 - Serializers: Allow you to convert a class in json or xml format, they can validate any data, it's like the data structure
