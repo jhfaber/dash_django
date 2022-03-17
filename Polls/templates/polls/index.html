@@ -1,0 +1,17 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% if questions %}
+    <ul>
+        {% for q in questions %}
+            
+            <!-- <li><a href="/first_app/{{ q.id }}/">{{ q.question_text }}</a></li> -->
+            
+            <li><a href="{% url 'first_app:detail' q.id %}">{{ q.question_text }}</a></li> <!--  its the same than above but more precision -->
+            
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay preguntas</p>
+{% endif %}
+

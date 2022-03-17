@@ -32,12 +32,17 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'first_app.apps.FirstAppConfig',
+    'Polls.apps.PollsConfig',
+    'rest_api',   
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -67,6 +72,13 @@ TEMPLATES = [
         },
     },
 ]
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_RENDERER_CLASSES': [
+#         'rest_framework.renderers.JSONRenderer',
+#         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+#     ]
+# }
 
 WSGI_APPLICATION = 'dash_django.wsgi.application'
 
