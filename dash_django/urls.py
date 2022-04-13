@@ -21,5 +21,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('first_app/', include('first_app.urls')),
     path('polls/', include('Polls.urls')),
-    path('rest_api/', include('rest_api.urls'))
+    path('rest_api/', include('rest_api.urls')),
+    path('comment/',include('comment_app.urls')),
+
+    # http://127.0.0.1:8000/accounts/login/
+    path('accounts/', include('django.contrib.auth.urls')),
 ]

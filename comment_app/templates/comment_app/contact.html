@@ -1,0 +1,117 @@
+
+{% extends "comment_app/base.html" %}
+
+{% block content %}
+
+
+{% load crispy_forms_tags %}
+
+
+
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+
+
+
+
+
+
+    {% if messages %}
+    
+        {% for message in messages %}
+        <div class="alert alert-primary"{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+        {% endfor %}
+    
+    {% endif %}
+    <div class="card">
+        <div class="card-header"><h1>Our form</h1></div>
+        <div class="card-body">                
+        
+            <form action="{% url 'comment_app:contact' %}" enctype="multipart/form-data"  method="post">        
+
+                    {% csrf_token  %}
+                    {% bootstrap_form form %}
+                    
+            
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    
+    
+    
+
+        {% if messages %}
+        
+            {% for message in messages %}
+            <div class="alert alert-primary"{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+            {% endfor %}
+        
+        {% endif %}
+        <div class="card">
+            <div class="card-header"><h1>Our form</h1></div>
+            <div class="card-body">                
+            
+                <form action="{% url 'comment_app:contact' %}" enctype="multipart/form-data"  method="post">        
+
+                        {% csrf_token  %}
+                        {{form|crispy}}
+                        
+                
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+        </div>
+    
+        
+    
+    <br>
+
+    
+    
+    <h1>Another Form </h1>
+    <form method="post" novalidate>
+        {% csrf_token %}
+        <div class="row">
+        <div class="col-6">
+            {{ form.name|as_crispy_field }}
+        </div>
+        <div class="col-6">
+            {{ form.surname|as_crispy_field }}
+        </div>
+        </div>
+        {{ form.phone|as_crispy_field }}
+        
+        <button type="submit" class="btn btn-success">Save person</button>
+    </form>
+    
+    {% comment %} 
+    <form>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">{{form.name}}</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form> {% endcomment %}
+    
+{% endblock content %}

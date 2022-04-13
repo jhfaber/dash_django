@@ -1,0 +1,76 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}  
+    {% load crispy_forms_tags %}
+    <link rel="stylesheet" href="{% static '/user.style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+    <style>
+        .b-example-divider {
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 0.5em 1.5em rgb(0 0 0 / 10%), inset 0 0.125em 0.5em rgb(0 0 0 / 15%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidenav">
+         <div class="login-main-text">
+            <h2>Application<br> Login Page</h2>
+            <p>Login or register from here to access.</p>
+         </div>
+      </div>
+      <div class="main">
+         <div class="col-md-6 col-sm-12">
+            <div class="login-form">
+               
+                <form method="post" action="{% url 'login' %}">
+                  {% csrf_token %}
+                  <div class="form-group">
+                     <label>{{ form.username.label_tag }}</label>
+                     <input type="text" class="form-control" placeholder="User Name">
+                     <!-- {{ form.username }} -->
+                  </div>
+                  <div class="form-group">
+                     <label>{{ form.password.label_tag }}</label>                     
+                     <input type="password" class="form-control" placeholder="Password">
+                     <!-- {{ form.password|as_crispy_field }} -->
+                  </div>
+                  <button type="submit" class="btn btn-secondary">Login</button>
+                  <button type="submit" class="btn btn-secondary">Register</button>
+               
+                </form>
+            </div>
+         </div>
+      </div> 
+
+    
+
+    {# Assumes you set up the password_reset view in your URLconf #}
+    <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+
+    
+
+    
+
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    
+</body>
+</html>

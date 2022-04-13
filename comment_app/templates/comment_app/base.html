@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}  
+    {% load crispy_forms_tags %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+    <style>
+        .b-example-divider {
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 0.5em 1.5em rgb(0 0 0 / 10%), inset 0 0.125em 0.5em rgb(0 0 0 / 15%);
+        }
+    </style>
+</head>
+<body>
+
+    
+
+    {% include "comment_app/partials/header.html" %}
+    <br>
+    <div class="container">
+        
+
+        <h1>Base</h1>
+
+
+        {% block content %}
+        
+        {% endblock content %}
+
+        
+
+    </div>
+
+    {% include "comment_app/partials/footer.html" %}
+
+    
+
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    
+</body>
+</html>
