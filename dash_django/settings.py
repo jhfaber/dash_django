@@ -49,7 +49,10 @@ INSTALLED_APPS = [
 
     
     'crispy_forms',
-    'bootstrap4'
+    'bootstrap4',
+
+    
+    'drf_yasg',
 ]
 
 

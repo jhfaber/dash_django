@@ -129,8 +129,10 @@ router.register(r'tipeelement',TypeElementViewSet)
 router.register(r'category',CategoryViewSet)
 router.register(r'comment',CommentViewSet)
 
-# app_name = 'rest_api'
+
 urlpatterns = router.urls
+# app_name = 'rest_api'
+
 # urlpatterns = [
 #     path('', include(router.urls)),
 #     # path('rest_api/', include('rest_api.urls', namespace='rest_framework'))

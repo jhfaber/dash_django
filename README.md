@@ -15,6 +15,8 @@ For startapp commando you should register you app in settings.py file, in the ar
     django-admin startproject [NAME]    # CREATE PROJECT (settings)
     python3 manage.py startapp [NAME] 	# DJANGO APP of project (MVC)
 
+- [GRAPPELLLI ](https://github.com/sehmaschine/django-grappelli) Change Django styles-library
+- [Django - libraries admin styles](https://djangopackages.org/grids/g/admin-styling/)
 
 # MIGRATIONS
 
@@ -23,6 +25,7 @@ For startapp commando you should register you app in settings.py file, in the ar
     python3 manage.py makemigrations first_app
     python3 manage.py sqlmigrate first_app 0001
     python3 manage.py migrate
+
 
 
     
@@ -45,6 +48,7 @@ For startapp commando you should register you app in settings.py file, in the ar
   - [Documentation](https://docs.djangoproject.com/en/4.0/intro/tutorial07/) 
   - In admin.py [project](first_app/admin.py)
 - [Django databases](https://docs.djangoproject.com/en/4.0/ref/databases/)
+- [Many to Many relationship](https://www.sankalpjonna.com/learn-django/the-right-way-to-use-a-manytomanyfield-in-django)
 
 
 
@@ -52,8 +56,9 @@ For startapp commando you should register you app in settings.py file, in the ar
 - [Django REST FRAMEWORK](https://www.django-rest-framework.org/)
 - **Serializers**: Allow you to convert a class in json or xml format, they can validate any data, it's like the data structure  
 - **ViewSets (Controllers)**: CRUD you can overrided some element of the CRUD
-  - - [Documentation](https://www.django-rest-framework.org/api-guide/viewsets/)
-
+  - [Documentation](https://www.django-rest-framework.org/api-guide/viewsets/)
+- JWT (JSON WEB TOKEN) digital signature
+  - 
 
 # FORMS
 
@@ -68,14 +73,16 @@ For startapp commando you should register you app in settings.py file, in the ar
   - With forms and files is necesary to use multipart/form-data 
 - Filters working by each value (rendering values adding something) {{ value|add:'2'}}
 
+
+
 # LOGGING
 
 - [Documentation](https://docs.djangoproject.com/en/4.0/topics/logging/)
 
-# COMMOND TASK / TIPS
+# DEBUGGING
 
-- Imports are related to manage.py
-  - [Example an import from another app](Polls/views.py)
+- [DJANGO DEBUG TOOLBAR](https://django-debug-toolbar.readthedocs.io/en/latest/)
+
 
 
 
@@ -83,7 +90,28 @@ For startapp commando you should register you app in settings.py file, in the ar
 
     python3 manage.py test Polls/tests
 
-# CONCEPTS
 
-- Generic views are views with classes
+#  TIPS
+
+- Imports are related to manage.py
+  - [Example an import from another app](Polls/views.py)
+
+# DOCUMENTATION 
+
+- [swagger](https://drf-yasg.readthedocs.io/en/stable/readme.html)
+  - [Explain video](https://www.youtube.com/watch?v=FvRfzQREXAY&t=1523s&ab_channel=Developer.pe)
+  - Swagger search for viewsets.ModelViewSet and build the documentary automatically
+- FILES INVOLVED 
+  - [urls.py](dash_django/urls.py)
+  - [settings.py](dash_django/settings.py)
+  - [viewset.py](dash_app/viewsets.py)
+
+
+
+# DASH API
+
+Our project will have the next db structure
+
+![alt text](images/model.png)
+
   
