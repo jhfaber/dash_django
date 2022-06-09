@@ -14,6 +14,7 @@ For startapp commando you should register you app in settings.py file, in the ar
     python3 manage.py createsuperuser
     django-admin startproject [NAME]    # CREATE PROJECT (settings)
     python3 manage.py startapp [NAME] 	# DJANGO APP of project (MVC)
+    django-admin startapp [NAME]        # DJANGO APP
 
 - [GRAPPELLLI ](https://github.com/sehmaschine/django-grappelli) Change Django styles-library
 - [Django - libraries admin styles](https://djangopackages.org/grids/g/admin-styling/)
@@ -28,7 +29,6 @@ For startapp commando you should register you app in settings.py file, in the ar
 
 
 
-    
 
 
 ## CONSOLE (DJANGO SHELL)
@@ -53,12 +53,31 @@ For startapp commando you should register you app in settings.py file, in the ar
 
 
 # REST API
-- [Django REST FRAMEWORK](https://www.django-rest-framework.org/)
 - **Serializers**: Allow you to convert a class in json or xml format, they can validate any data, it's like the data structure  
+  - [Example](/apps/dash_app/serializer.py)
+  - 
 - **ViewSets (Controllers)**: CRUD you can overrided some element of the CRUD
   - [Documentation](https://www.django-rest-framework.org/api-guide/viewsets/)
+  - [Better Documentation](https://testdriven.io/blog/drf-views-part-3/)
+  - @action allows you to have a custom routing for an specific action viewset/1/action
+  - [Parsers: allow multipart data](https://www.django-rest-framework.org/api-guide/parsers/)
 - JWT (JSON WEB TOKEN) digital signature
-  - 
+  - [simple JWTF](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/)
+- [SIMPLEJWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/) 
+  - Simple ways
+- [DRF DJANGO REST FRAMEWORK](https://www.django-rest-framework.org/) / types of authentication HARDCORE!! 
+  - BasicAuthentication: Validated user and password
+  - SessionAuthentication
+  - TokenAuthentication: Unique token per user
+- [Code example](https://github.com/developerpe/ecommerce_rest)
+- Simple history: allow to track all the user actions [Docs](https://django-simple-history.readthedocs.io/en/latest/)
+- [All classes and methods](https://www.cdrf.co/)
+
+
+# PROJECT STRUCTURE
+- You can change the project structure by creating all the apps inside /apps
+  - Add in settings.py sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+  - In INSTALLED_APPS add apps.[APP_NAME]
 
 # FORMS
 
@@ -115,3 +134,59 @@ Our project will have the next db structure
 ![alt text](images/model.png)
 
   
+
+
+
+
+# DJANGO - JUPYTER
+
+[Reference](https://stackoverflow.com/questions/35483328/how-do-i-set-up-jupyter-ipython-notebook-for-django/54856080#54856080)
+
+- Install jupyter
+
+
+
+      pip install jupyter
+
+
+Install django-extentions
+
+    pip install django-extensions
+
+Set up django-extensions by adding it to the INSTALLED_APPS setting of your Django project settings.py file.:
+
+    INSTALLED_APPS = (
+      ...
+      'django_extensions',
+    )
+
+
+Run the shell_plus management command that is part of django-extensions. Use the option --notebook to start a notebook:
+
+    python3 manage.py shell_plus --notebook
+
+
+
+
+Jupyter Notebooks will open automatically in your browser.
+
+
+
+
+# MODIFING manage.py
+- Search for python-dotenv read .env
+- Catch custom error: DjangoImportException
+
+
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip
+https://www.vaultproject.io/
+https://gpgtools.org/
