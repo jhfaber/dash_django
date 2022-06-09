@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'comment_app',
     'auth_app',
+    'django_extensions',
 
     
     'crispy_forms',
